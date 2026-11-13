@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embarcación con teleoperación · ETAPA EP</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav id="nav"><strong>🚤 Embarcación LoRa</strong>
+<a href="#problema">Problema</a><a href="#objetivos">Objetivos</a><a href="#sistema">Sistema</a><a href="#cronograma">Cronograma</a><a href="#presupuesto">Presupuesto</a><a href="#quiz">Quiz</a></nav>
+
+<header class="hero">
+<div><p class="tag">Mecatrónica · Colegio de Bachillerato Ricaurte</p>
+<h1>Diseño y construcción de una embarcación con teleoperación</h1>
+<p>Un prototipo controlado por LoRa y ESP32 para medir la calidad del agua en las lagunas de estabilización de ETAPA EP.</p>
+<a class="btn" href="#problema">Explorar el proyecto ↓</a></div>
+<img src="assets/portada.jpg" alt="Embarcación teleoperada en una laguna">
+</header>
+
+<main>
+<section id="equipo"><h2>Equipo</h2>
+<div class="cards">
+<div class="card"><b>Autores</b><br>Andrés Parra, Andrea Basantes, Christopher Idrovo y Nube Cali</div>
+<div class="card"><b>Tutor</b><br>Ing. Galo Patricio Hurtado</div>
+<div class="card"><b>Institución de referencia</b><br>ETAPA EP</div>
+<div class="card"><b>Presentación</b><br>Viernes, 13 de noviembre de 2026</div>
+</div></section>
+
+<section id="problema"><h2>El problema</h2>
+<div class="two">
+<div><p>En plantas como la de ETAPA EP, el agua pasa por un tratamiento preliminar y un tren de <b>6 lagunas de estabilización</b>: 2 aireadas, 2 facultativas y 2 de maduración. Monitorearlas hoy tiene dificultades. Toca cada una para verlas:</p>
+<div class="acc">
+<button>Cobertura espacial</button><div>Las lagunas son extensas, y es difícil muestrear todos los puntos.</div>
+<button>Desplazamiento y riesgo operativo</button><div>El personal debe movilizarse físicamente hasta el agua.</div>
+<button>Registro manual de datos</button><div>Anotar a mano genera errores y retrasos.</div>
+<button>Trazabilidad y comunicación</button><div>Es difícil guardar historiales y compartir resultados.</div>
+</div></div>
+<img src="assets/planta.jpg" alt="Lagunas de estabilización">
+</div>
+<div class="question"><h3>Pregunta de investigación</h3>
+<p>¿Cómo diseñar e implementar una embarcación teleoperada mediante LoRa y ESP32, capaz de desplazarse por las lagunas para medir, registrar y visualizar pH, turbidez, temperatura y TDS del agua en ETAPA EP?</p>
+<img src="assets/embarcacion.jpg" alt="Concepto de la embarcación con sensores"></div>
+</section>
+
+<section id="objetivos"><h2>Objetivos</h2>
+<p class="goal"><b>General:</b> implementar un prototipo de embarcación teleoperada con ESP32 y LoRa para navegar por el tratamiento preliminar y las 6 lagunas, y registrar variables de calidad del agua.</p>
+<div class="cards">
+<div class="card"><span class="n">1</span>Diseñar la estructura flotante e integrar propulsión y sensores (pH, DS18B20, ultrasónico impermeable, TDS, turbidez y aceite).</div>
+<div class="card"><span class="n">2</span>Programar el ESP32 y configurar LoRa para control remoto y telemetría.</div>
+<div class="card"><span class="n">3</span>Desarrollar una interfaz digital para visualizar y almacenar los datos de cada laguna.</div>
+<div class="card"><span class="n">4</span>Validar el prototipo en campo comparando los parámetros de las distintas etapas.</div>
+</div>
+<h3>Alcance y limitaciones</h3>
+<div class="two">
+<div class="box ok"><h4>✅ Alcance</h4><ul>
+<li><b>Prototipo:</b> modelo físico funcional.</li><li><b>Control:</b> navegación remota por LoRa.</li>
+<li><b>Medición:</b> pH, temperatura, turbidez, TDS, ultrasónico y aceite (opcional).</li>
+<li><b>Procesamiento:</b> ESP32 e interfaz digital.</li></ul></div>
+<div class="box warn"><h4>⚠️ Limitaciones</h4><ul>
+<li>No certifica potabilidad: no evalúa seguridad microbiológica.</li>
+<li>Las pruebas dependen de la autorización de ETAPA EP.</li>
+<li>Clima adverso, maleza o corrientes pueden afectar la navegación.</li></ul></div>
+</div></section>
+
+<section id="sistema"><h2>Arquitectura del sistema</h2>
+<p>Elige un tema para ver el detalle.</p>
+<div class="tabs" role="tablist">
+<button class="on" data-t="flujo">Flujo</button><button data-t="hw">Hardware</button><button data-t="sw">Software</button><button data-t="norma">Normativa</button></div>
+<div class="panel on" id="flujo">
+<div class="flow"><div>🚤<b>Embarcación</b>Propulsores dobles y sensores</div><i>→</i><div>📡<b>Transmisión</b>LoRa + ESP32</div><i>→</i><div>📱<b>Visualización</b>Panel digital o app móvil</div></div></div>
+<div class="panel" id="hw"><ul>
+<li><b>Control y comunicación:</b> ESP32 y módulos LoRa.</li><li><b>Propulsión:</b> motores eléctricos con hélices, driver y batería.</li>
+<li><b>Sensores:</b> pH, DS18B20, TDS, turbidez, ultrasónico impermeable y aceite (opcional).</li><li><b>Estructura:</b> casco flotante estable.</li></ul></div>
+<div class="panel" id="sw"><ul><li><b>Programación:</b> Arduino IDE.</li><li><b>Interfaz:</b> aplicación móvil o panel digital.</li></ul></div>
+<div class="panel" id="norma"><ul><li>Lineamientos operativos de ETAPA EP y buenas prácticas en mecatrónica.</li></ul></div>
+</section>
+
+<section id="cronograma"><h2>Cronograma</h2>
+<p>20 semanas, de noviembre de 2026 a mayo de 2027. Toca una etapa.</p>
+<div id="etapas" class="cards small"></div>
+<p id="etapaInfo" class="info">Selecciona una etapa para ver sus fechas.</p>
+<p class="hint">Desliza la imagen para verla completa →</p><div class="scroll"><img class="wide" src="assets/cronograma.jpg" alt="Cronograma de actividades"></div></section>
+
+<section id="presupuesto"><h2>Presupuesto</h2>
+<p>Marca o desmarca ítems para ver cómo cambia el total.</p>
+<div class="scroll"><table id="tabla"><thead><tr><th></th><th>Elemento</th><th>Cant.</th><th>Unitario</th><th>Total</th></tr></thead><tbody></tbody>
+<tfoot><tr><td colspan="4">Subtotal materiales</td><td id="total"></td></tr></tfoot></table></div>
+<p class="info">Presupuesto previsto: <b>$350–400</b>.</p></section>
+
+<section id="quiz"><h2>Pon a prueba lo aprendido</h2><div id="quizBox"></div></section>
+
+<section id="refs"><h2>Referencias</h2>
+<ul class="refs">
+<li>American Public Health Association. (2017). <i>Standard methods for the examination of water and wastewater</i> (23.ª ed.). APHA; AWWA; WEF.</li>
+<li>Chapman, D. V., &amp; Sullivan, T. (2022). The role of water quality monitoring in the sustainable use of ambient waters. <i>One Earth, 5</i>(2), 132–137. <a href="https://doi.org/10.1016/j.oneear.2022.01.008">doi</a></li>
+<li>ETAPA EP. (2024). <i>Manual de procesos de depuración y tratamiento de aguas residuales en la planta de Ucubamba.</i></li>
+<li>Monk, S. (2022). <i>Programming ESP32 with Arduino</i> (2.ª ed.). McGraw-Hill Education.</li>
+<li>UNESCO. (2024). <i>Informe Mundial de las Naciones Unidas sobre el Desarrollo de los Recursos Hídricos 2024.</i> <a href="https://unesdoc.unesco.org/">unesdoc</a></li>
+<li>Organización Mundial de la Salud. (2022). <i>Guías para el saneamiento y la salud.</i> <a href="https://www.who.int/es/publications/i/item/9789240043176">OMS</a></li>
+<li>Sperling, M. von. (2007). <i>Wastewater stabilization ponds</i> (Vol. 3). IWA Publishing. <a href="https://doi.org/10.2166/9781780402888">doi</a></li>
+</ul></section>
+</main>
+<footer>Colegio de Bachillerato Ricaurte · Mecatrónica · ETAPA EP</footer>
+<script src="script.js"></script>
+</body></html>
